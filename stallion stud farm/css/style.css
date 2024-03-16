@@ -1,0 +1,495 @@
+
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+
+/* resets */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* styling the navbar */
+
+.navbar {
+    height: 10vh;
+    background-color: #232323c9;
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navLinks {
+    display: flex;
+}
+
+.navLink {
+    list-style-type: none;
+
+    padding: 6px 12px;
+}
+
+.navbarBrand a {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.navLink a,
+.navbarBrand a {
+    color: white;
+    font-family: 'Madimi One';
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* styling the home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bgImages/bgBrown.jpg);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    padding: 1rem;
+
+    position: relative;
+}
+
+.introSection  {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0 1rem;
+    transform: translateY(-90%);
+    width: 70%;
+}
+
+.introSection .heading {
+    color: white;
+    font-family: 'madimi one';
+    text-shadow: 2px 2px 3px #232323;
+    margin-bottom: 1rem;
+}
+
+.introSection p {
+    color: white;
+    font-family: 'madimi one';
+    text-shadow: 2px 2px 3px #232323;
+    margin-bottom: 1.5rem;
+}
+
+.introSection .moreInfo {
+    color: #232323;
+    font-family: 'madimi one';
+    text-decoration: none;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid #232323;
+    display: inline-block;
+    transition: transform 250ms 100ms ease-out;
+}
+
+.introSection .moreInfo:hover {
+    transform: translateY(-5px);
+}
+
+/* styling the about section */
+
+.about {
+    background-image: url(../images/bgImages/aboutBg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: 12vh 1.5rem 0 1.5rem;
+}
+
+.aboutUs {
+    width: 70%;
+}
+
+.aboutUs h1 {
+    color: white;
+    font-family: 'madimi one';
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px #232323c9;
+    margin-bottom: 1rem;
+}
+
+.aboutUs p {
+    color: white;
+    font-family: 'madimi one';
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px #232323c9;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* styling the gallery section */
+
+.gallery {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bgImages/p2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gallery .introHeading  {
+    color: white;
+    font-size: 30px;
+    font-family: 'madimi one';
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px #232323c9;
+    margin-bottom: 16px;
+}
+
+.carousel {
+    width: 86%;
+    max-width: 720px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    position: relative;
+
+}
+
+.carouselSlides {
+    display: flex;
+    transition: transform 800ms ease-out;
+}
+
+.carouselSlides .carouselSlide {
+    flex: 0 0 100%;
+    display: block;
+}
+
+.carouselSlide img {
+    width: 100%;
+}
+
+.carouselControllers {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    
+}
+
+.carouselControllers i {
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    padding: 16px 20px;
+    background-color: #232323b2;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* styling the pricing section */
+
+.pricing {
+    background-color: #302f2f;
+    padding: 10vh 1rem;
+    min-height: 100vh;
+}
+
+.pricing .heading {
+    color: white;
+    font-family: 'madimi one';
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 2px 2px 3px #000000;
+    margin-top: 10px;
+}
+
+.pricingGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.horse1,
+.horse2,
+.horse3,
+.horse4 {
+    
+    flex-basis: 260px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.pricing img {
+    width: 100%;
+    display: block;
+}
+
+.modalWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    background-color: #232323;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease-out 500ms;
+}
+
+.modalWindow.display {
+    display: flex;
+    opacity: 1;
+}
+
+.modalWindow .imgContainer {
+    width: 60%;
+    max-width: 400px;
+    position: relative;
+}
+
+.imgContainer img {
+    width: 100%;
+}
+
+.dismissContainer  {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translate(50%, -50%);
+    background-color: tomato;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.dissMiss {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, -3px);
+    
+
+}
+
+.dissMiss::before {
+    content: '';
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    border-radius: 10px;
+}
+
+.dissMiss::after {
+    content: '';
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(135deg);
+    border-radius: 10px;
+}
+
+.priceDesc {
+    color: white;
+    font-family: 'madimi one';
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px black;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+/* styling the contact section */
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/bgImages/contactBg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10vh 1rem;
+}
+
+.contactHeading {
+    color: white;
+    font-family: 'madimi one';
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0 20px 0;
+}
+
+.formContainer  {
+    width: 80%;
+    max-width: 680px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+input, textarea {
+    color: white;
+    display: block;
+}
+input::placeholder,
+textarea::placeholder {
+    color: white;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+    font-family: 'madimi one';
+    letter-spacing: 1px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: #00000057;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+button[type='submit'] {
+    color: white;
+    font-family: 'madimi one';
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: block;
+    background-color: #00000057;
+    margin: auto;
+    padding: 8px 50px;
+    border: 2px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 250ms ease-out,
+                background-color 250ms ease-out;
+}
+
+button[type='submit']:hover {
+    transform: translateY(-5px);
+    background-color: #00000080;
+}
+
+/* styling the footer section */
+
+.footer {
+    background-color: #000000;
+    padding: 1rem;
+}
+
+.footer .footerText {
+    color: #eee;
+    font-family: 'madimi one';
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+
+    .navbar {
+        justify-content: center;
+        border-radius: 0 0 26px 26px;
+
+    }
+
+    .navLinks {
+        width: 100%;
+        background-color: #232323c9;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 10vh;
+
+        justify-content: space-evenly;
+        align-items: center;
+        
+        padding: 0 10px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .navLink {
+        padding: 0;
+    }
+
+    .introSection {
+        width: 85%;
+        transform: translateY(-80%);
+    }
+
+    .aboutUs {
+        width: 75%;
+    }
+
+    .footerText {
+        margin-bottom: 10vh;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    .navLink a {
+        letter-spacing: 0;
+    }
+
+    .introSection {
+        width: 100%;
+        transform: translateY(-70%);
+    }
+
+    .aboutUs {
+        width: 85%;
+    }
+
+    .aboutUs p {
+        line-height: 1.2;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .modalWindow .imgContainer {
+        width: 70%;
+       
+    }
+}
